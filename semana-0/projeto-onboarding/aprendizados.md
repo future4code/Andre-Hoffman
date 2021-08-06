@@ -1,0 +1,2 @@
+# Aprendizados da semana
+Nessa primeira semana, conhecemos a ótima estrutura que a **Labenu** disponibiliza para seus alunos. Foi ótimo sentir a boa energia dos Instrutores e Alunos. Além disso, a parte inicial de Git e VSCode foi importante para começarmos a codar de fato semana que vem. 

@@ -36,13 +36,13 @@ console.log(typeof(firstName),typeof(age))
 console.log("Olá "+firstName +", você tem "+age +" anos")
 
 //2)
-// const firstQuestion = prompt ("Do you code?")
-// const secondQuestion = prompt ("Are you happy?")
-// const thirdQuestion = prompt("Are you hungry?")
+const firstQuestion = prompt ("Do you code?")
+const secondQuestion = prompt ("Are you happy?")
+const thirdQuestion = prompt("Are you hungry?")
 
-// console.log("Do you code?"+firstQuestion)
-// console.log("Are you happy?"+secondQuestion)
-// console.log("Are you hungry?"+thirdQuestion)
+console.log("Do you code?"+firstQuestion)
+console.log("Are you happy?"+secondQuestion)
+console.log("Are you hungry?"+thirdQuestion)
 
 //3)
 
@@ -53,11 +53,9 @@ c=a
 a=b
 b=c
 
-// Aqui faremos uma lógica para trocar os valores
 
-// Depois de trocados, teremos o seguinte resultado:
-// console.log("O novo valor de a é", a) // O novo valor de a é 25
-// console.log("O novo valor de b é", b) // O novo valor de b é 10
+console.log("O novo valor de a é", a) // O novo valor de a é 25
+console.log("O novo valor de b é", b) // O novo valor de b é 10
 
 //Desafio
 

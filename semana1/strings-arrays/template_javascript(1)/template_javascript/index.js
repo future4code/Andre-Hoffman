@@ -11,7 +11,7 @@ f. 10
 27
 */
 
-/*
+
 //1)
 const userName = prompt("Insert your name: ")
 const userEmail = prompt("Insert your email: ")
@@ -33,7 +33,7 @@ console.log(arrayFood[4])
 const userFood = prompt("Insert your favorite food: ")
 arrayFood[1] = userFood
 console.log(arrayFood)
-*/
+
 
 //3
 //a
@@ -54,3 +54,18 @@ console.log(listaDeTarefas)
 const numberTask = prompt("Type one daily done task: ")
 listaDeTarefas.splice(numberTask,1)
 console.log(listaDeTarefas)
+
+
+
+//desafio
+//1)
+const sentence = "This is the challenge of the day."
+const words = sentence.split(" ")
+console.log(words)
+
+//2)
+let arrayFruits = ["Banana", "Morango", "Abacaxi", "Laranja", "Ameixa"]
+let abacaxiIndex = arrayFruits.indexOf("Banana")
+console.log(abacaxiIndex)
+console.log(arrayFruits.length)
+

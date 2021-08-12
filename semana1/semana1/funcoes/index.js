@@ -78,3 +78,30 @@ console.log("Diferença: ",subtract(firstNumber,secondNumber))
 console.log("Multiplicação: ",multiply(firstNumber,secondNumber))
 console.log(`Divisão: ${divide(firstNumber,secondNumber)}`)
 
+
+
+//Desafio
+//1)a)
+const firstArrowFunction = (a) =>{
+    console.log(a)
+}
+const expression = firstArrowFunction("Hello, world")
+
+//b)
+const secondArrowFunction = (a,b) =>{
+    const sum1 = a+b
+    const result1 = firstArrowFunction(sum1)
+}
+
+const sum2 = secondArrowFunction(1,2) //3
+
+//2)
+const pitagoras = (cat1,cat2) =>{
+    const hipotenusa = Math.pow((Math.pow(cat1,2)+Math.pow(cat2,2)),0.5)
+    return hipotenusa
+}
+
+const valorHipotenusa = pitagoras(3,4)
+
+console.log(valorHipotenusa)
+

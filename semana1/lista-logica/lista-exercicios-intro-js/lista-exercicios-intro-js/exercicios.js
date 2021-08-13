@@ -101,6 +101,8 @@ function checaIgualdadeDesconsiderandoCase(string1, string2) {
   return (string1Upper == string2Upper)
 }
 
+//testando autenticação
+
 // // EXERCÍCIO 13
 // function checaRenovacaoRG() {
 //   const anoAtual = Number(prompt("digite ano atual: "))

@@ -102,25 +102,45 @@ function checaIgualdadeDesconsiderandoCase(string1, string2) {
 }
 
 //testando autenticação
+//testando autenticacao 2
 
-// // EXERCÍCIO 13
-// function checaRenovacaoRG() {
-//   const anoAtual = Number(prompt("digite ano atual: "))
-//   const anoDeNascimento = Number(prompt("digite ano nascimento: "))
-//   const anoEmissao = Number(prompt("digite ano emissão da carteira: "))
+// EXERCÍCIO 13
+function checaRenovacaoRG() {
+  const anoAtual = Number(prompt("digite ano atual: ")) //2020
+  const anoDeNascimento = Number(prompt("digite ano nascimento: ")) //1990
+  const anoEmissao = Number(prompt("digite ano emissão da carteira: ")) //2009
+
+  const menorOu20Anos = ((anoAtual-anoDeNascimento)<=20) //false
+  const maior20MenorOu50 = ((anoAtual-anoDeNascimento)>20 && (anoAtual-anoDeNascimento)<=50) //true
+  const maior50 = ((anoAtual-anoDeNascimento)>50) //false
+  const diferenca = (anoAtual-anoEmissao) //11
+  const bolean = (menorOu20Anos && (diferenca>=5)      ||  
+  maior20MenorOu50 && (diferenca>=10)  || //true
+  maior50 && (diferenca>=15))
+  
+
+  console.log(bolean) //esp.: true
+    
+    
+}
 
 
+// EXERCÍCIO 14
+function checaAnoBissexto(ano) { //ano=2012
+  const anoBissexto = ((ano%400)==0 || 
+  ((ano%4)==0 && (!(ano%100)==0 && !(ano%400)==0)))
+  return anoBissexto //esperado:true
+}
 
-// }
+// EXERCÍCIO 15
+function checaValidadeInscricaoLabenu() {
+  const mais18 = prompt("possui mais de 18 anos?")
+  const ensinoMedio = prompt("possui ensino médio completo?")
+  const disponibilidade = prompt("Você possui disponibilidade exclusiva durante os horários do curso?")
+  
+  const bolean = (mais18=="sim")&&(ensinoMedio=="sim")&&(disponibilidade=="sim")
 
-// // EXERCÍCIO 14
-// function checaAnoBissexto(ano) {
-//   // implemente sua lógica aqui
+  console.log(bolean)
 
-// }
 
-// // EXERCÍCIO 15
-// function checaValidadeInscricaoLabenu() {
-//   // implemente sua lógica aqui
-
-// }
+}

@@ -14,43 +14,43 @@ c)a variável mensagem só existe dentro do escopo do if, portanto o console.log
 */
 
 //1)a)b)
-// const age = Number(prompt("insert your age: "))
+const age = Number(prompt("insert your age: "))
 
-// //c)
-// if(age>=18){
-//     console.log("You are allowed to drive")
-// }else{
-//     console.log("You aren't allowed to drive")
-// }
+//c)
+if(age>=18){
+    console.log("You are allowed to drive")
+}else{
+    console.log("You aren't allowed to drive")
+}
 
 //2)
 
-// const turno = prompt("digite turno que estuda (M,V ou N): ")
-// if(turno==="M"){
-//     console.log("Bom dia")
-// }else if(turno==="V"){
-//     console.log("Boa Tarde")
-// }else{
-//     console.log("Boa Noite")
-// }
+const turno = prompt("digite turno que estuda (M,V ou N): ")
+if(turno==="M"){
+    console.log("Bom dia")
+}else if(turno==="V"){
+    console.log("Boa Tarde")
+}else{
+    console.log("Boa Noite")
+}
 
 //3)
 
-// let turno = prompt("digite turno que estuda (M,V ou N): ")
-// switch(turno){
-//     case "M":
-//         console.log("bom dia")
-//         break
-//     case "V":
-//         console.log("boa tarde")
-//         break
-//     case "N":
-//         console.log("boa noite")
-//         break 
-//     default:
-//         console.log("digite novamente")
-//         break       
-// }
+let turno = prompt("digite turno que estuda (M,V ou N): ")
+switch(turno){
+    case "M":
+        console.log("bom dia")
+        break
+    case "V":
+        console.log("boa tarde")
+        break
+    case "N":
+        console.log("boa noite")
+        break 
+    default:
+        console.log("digite novamente")
+        break       
+}
 
 //4)
 const filme = prompt("digite genero do filme: ")

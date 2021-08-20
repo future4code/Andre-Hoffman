@@ -29,11 +29,15 @@
 function iniciar(){
    let arrayCartasSorteadas =[];
    for(let i=0; i<4; i++){  //sortear 4 cartas
+
+      
+
       let cartaSorteadaCompleta = comprarCarta();
       let cartaSorteadaTexto = cartaSorteadaCompleta.texto;
-      while(arrayCartasSorteadas.includes(cartaSorteadaTexto)){ //garantir que não haverá repetição
-         let cartaSorteadaCompleta = comprarCarta();
-         let cartaSorteadaTexto = cartaSorteadaCompleta.texto;
+      while(arrayCartasSorteadas.map((sorteio)=>{return sorteio.texto}).includes(cartaSorteadaTexto)){ //garantir que 
+          cartaSorteadaCompleta = comprarCarta();                                                    //não haverá repetição
+          cartaSorteadaTexto = cartaSorteadaCompleta.texto;
+         
       }
       arrayCartasSorteadas.push(cartaSorteadaCompleta);
 
@@ -88,9 +92,13 @@ function iniciar(){
 
 
 /*
-console.log(arrayCartasSorteadas)
+
 const cartaTeste = comprarCarta();
+const teste1 = comprarCarta()
+const arrayTeste = cartaTeste + teste1
 console.log(cartaTeste.texto) //acessa carta "10paus"
 console.log(cartaTeste.valor) //acessa valor 10
 console.log(cartaTeste) //{texto: "10♥️", valor: 10}
+console.log(cartaTeste.length) //retorna undefined
+
 */

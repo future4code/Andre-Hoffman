@@ -30,6 +30,12 @@ function retornaNumerosPares(array) {
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
+    const evenNumbers = array.filter((number)=>{
+        return number%2==0
+    }).map((number2)=>{
+        return number2**2
+    })
+    return evenNumbers
  
 }
 

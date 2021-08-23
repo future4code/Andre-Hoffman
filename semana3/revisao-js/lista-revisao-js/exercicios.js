@@ -9,8 +9,15 @@ function retornaTamanhoArray(array) {
 }
 
 // EXERCÍCIO 02
+
 function retornaArrayInvertido(array) {
-  
+    // const size = array.length
+    // let invertedArray = [];
+    // for(let i = 8; i == 0; i--){
+    //     invertedArray.push(2)
+    // }
+    // console.log(invertedArray)
+    return array.reverse()
 }
 
 // EXERCÍCIO 03

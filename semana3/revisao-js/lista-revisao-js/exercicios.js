@@ -22,7 +22,10 @@ function retornaArrayOrdenado(array) {
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-  
+    const evenNumbers = array.filter((number)=>{
+        return number%2==0
+    })
+    return evenNumbers
 }
 
 // EXERCÍCIO 05

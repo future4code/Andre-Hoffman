@@ -83,9 +83,9 @@ function iniciar(){
       cartaRodadaUsuario = cartaRodadaUsuario + [cartasTexto[rodada]]
       pontuacaoUsuario += cartasValor[rodada]
       pontuacaoComputador +=  cartasValor[rodada+7]
-      console.log(pontuacaoComputador)
-      console.log(pontuacaoUsuario)
-      console.log(verificaMenor21)
+      // console.log(pontuacaoComputador)
+      // console.log(pontuacaoUsuario)
+      // console.log(verificaMenor21)
       if(verificaMenor21){
          console.log("aqui dentro")
       }else{

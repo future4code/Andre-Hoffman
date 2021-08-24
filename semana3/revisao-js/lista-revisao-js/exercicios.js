@@ -130,11 +130,23 @@ function retornaPessoaAnonimizada(pessoa) {
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {
+    const arrayPessoasAutorizadas = pessoas.filter((pessoaAutorizada)=>{
+        return (
+            pessoaAutorizada.idade>14 && pessoaAutorizada.idade<60 
+            && pessoaAutorizada.altura>1.5)
+    })
+    return arrayPessoasAutorizadas
    
 }
 
 // EXERCÍCIO 13B
 function retornaPessoasNaoAutorizadas(pessoas) {
+    const arrayPessoasNaoAutorizadas = pessoas.filter((pessoaNaoAutorizada)=>{
+        return (
+            !(pessoaNaoAutorizada.idade>14 && pessoaNaoAutorizada.idade<60 
+            && pessoaNaoAutorizada.altura>1.5))
+    })
+    return arrayPessoasNaoAutorizadas
   
 }
 

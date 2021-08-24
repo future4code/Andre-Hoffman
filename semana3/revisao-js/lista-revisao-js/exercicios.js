@@ -101,15 +101,16 @@ function classificaTriangulo(ladoA, ladoB, ladoC) {
     }else{
         
         return "Isósceles"
-        
-
-        
-    }
-    
+    }  
 }
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
+    let arrayFinal = [];
+    arrayFinal.push(array.sort((function(a, b){return a-b} ))[array.length-2]);
+    arrayFinal.push(array.sort((function(a, b){return a-b} ))[1]);
+    return arrayFinal
+
   
 }
 

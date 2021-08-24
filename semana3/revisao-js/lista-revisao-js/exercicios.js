@@ -152,7 +152,18 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
-
+    let contaSoma = contas.map((obj)=>{
+        return obj.compras.reduce((a, b) => a + b, 0)
+    })
+    contas.forEach(conta => {
+        conta.saldoTotal -= contaSoma[0]
+        contaSoma.shift();
+        conta.compras = []
+        })
+        return contas
+        
+    
+    // reduce((a, b) => a + b, 0
 }
 
 // EXERCÍCIO 15A

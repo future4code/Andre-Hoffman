@@ -107,6 +107,7 @@ const nomePokemons = pokemons.map(
 
 console.log(nomePokemons.sort())
 
+
 //b)
 
 function getDuplicates(data){

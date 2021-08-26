@@ -60,6 +60,11 @@ div img {
     height: 15px;
 }
 
+.afastar-cabecalho{
+    position: relative;
+    top:50px;
+    
+}
 
 /** 
   *
@@ -70,6 +75,7 @@ div img {
 #container-de-descricao {
     background-color: #2274a5;
     color: white;
+    
 }
 
 #container-de-descricao>ol {

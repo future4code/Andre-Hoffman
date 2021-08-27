@@ -15,6 +15,14 @@ h2 {
     padding: 10px 5px 10px 5px;
     color: white;
     text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+
+}
+
+h3{
+    font-family: 'Roboto', sans-serif;
+
 }
 
 input {
@@ -78,11 +86,14 @@ div img {
 #container-de-descricao {
     background-color: #2274a5;
     color: white;
+   
+    height: 400px;
     
 }
 
 #container-de-descricao>ol {
     padding: 15px 0px;
+    font-family: 'Roboto', sans-serif;
 }
 
 #container-para-comprar {
@@ -133,6 +144,9 @@ td button {
     border-radius: 5px;
     font-size: 10px;
     color: black;
+    display: block;
+    margin: 0 auto;
+    
 }
 
 #back-button:hover {
@@ -142,7 +156,7 @@ td button {
 .centro{
     margin-left: auto;
     margin-right: auto;
-    font-family: 'Roboto', sans-serif;;
+    font-family: 'Roboto', sans-serif;
     font-size: 15px;
     text-align: center;
 }
@@ -173,3 +187,15 @@ button:active{
     border-color: black;
    
   }
+
+.back-button2{
+    margin : 200px;
+    padding: 5px;
+
+}
+
+.bora{
+    position: relative;
+    top: 100px;
+    font-family: 'Roboto', sans-serif;
+}

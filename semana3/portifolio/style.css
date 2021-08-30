@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap');
+
+.letter{ 
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+    text-align: center;
+   
+
+}
+
+.right-side{
+    
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: larger;
+    font-family: sunflower;
+    opacity: 0.8;
+   
+    
+}
+
+.icon{
+    width: 30px;
+    margin-left: 40px;
+}
+
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+
+  
+
+hr { display: block; margin-before: 0.5em; margin-after: 0.5em; margin-start: auto; margin-end: auto; overflow: hidden; border-style: inset; border-width: 1px;}
+
+
+
+.fill {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px brown;
+    border-radius: 20px;
+    text-align: center;
+  }
+
+
+
+#fill-message input{
+    min-width:22%;
+    height: 20%;
+}
+
+
+
+
+#myVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity:0.8;
+    background: green;
+    mix-blend-mode: overlay;
+  }
+
+.text{
+  font-size: 3em;
+
+}
+
+h2 {
+  text-align: center;
+}
+
+#text2{
+  text-align: center;
+}

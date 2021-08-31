@@ -16,6 +16,7 @@
 .main-flex-container{
     display:flex;
     flex-direction: row;
+    
 }
 
 .nav-flex-container{
@@ -24,9 +25,10 @@
     
 }
 
-.section-flex-container{
-    display:flex;
-    flex-direction: row;
+.section-grid-container{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 10px;
 }
 
 .bolo-flex-container{
@@ -35,6 +37,8 @@
     align-items: center;
     box-shadow:2px 2px 5px darkgray;
     padding:10px;
+    width: 230px;
+    
 }
 
 header{
@@ -152,6 +156,6 @@ button{
 
 .foto-bolo{
     display: flex;
-    width: 250px;
+    width: 100%;
     
 }

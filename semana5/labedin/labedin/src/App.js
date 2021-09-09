@@ -3,6 +3,8 @@ import './App.css';
 import CardGrande from './components/CardGrande/CardGrande';
 import CardPequeno from './components/CardPequeno/CardPequeno';
 import ImagemButton from './components/ImagemButton/ImagemButton';
+import "./styles.css";
+import styled from "styled-components";
 
 function App() {
   return (
@@ -19,13 +21,15 @@ function App() {
           imagem="https://image.flaticon.com/icons/png/512/117/117472.png" 
           texto="Ver mais"
         />
-
+      
         <CardPequeno 
-          descricao="Email"
+          imagem="https://cdn-icons-png.flaticon.com/512/561/561127.png"
+          descricao="Email:andre@labenu.com.br"
         />
 
         <CardPequeno 
-          descricao="Endereço"
+          imagem="https://cdn-icons-png.flaticon.com/512/3179/3179068.png"
+          descricao= "Endereço: Brasil"
         />
       </div>
 

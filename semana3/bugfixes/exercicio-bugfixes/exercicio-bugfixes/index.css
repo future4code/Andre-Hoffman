@@ -1,0 +1,201 @@
+/** 
+  *
+  *  ESTILOS GERAIS 
+  *
+  **/
+  @import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    background-color: #fe7e02;
+    padding: 10px 5px 10px 5px;
+    color: white;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+
+}
+
+h3{
+    font-family: 'Roboto', sans-serif;
+
+}
+
+input {
+    height: 20px;
+    width: 500px;
+}
+
+button:focus {
+    color: white;
+}
+
+img {
+    width: 100px;
+}
+
+div>p:first-child {
+    display: inline;
+}
+
+div img {
+    background: black;
+}
+
+.botao-amarelo {
+    background-color: #ffaf43;
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 20px;
+    color: white;
+    margin: 200px
+}
+
+
+
+.botao-amarelo:hover {
+    background-color: #c44f00;
+}
+
+.container {
+    height: 500px;
+    text-align: center;
+}
+
+.icone {
+    height: 15px;
+}
+
+.afastar-cabecalho{
+    position: relative;
+    top:50px;
+    
+}
+
+/** 
+  *
+  *  ESTILOS HOME 
+  *
+  **/
+
+#container-de-descricao {
+    background-color: #2274a5;
+    color: white;
+   
+    height: 400px;
+    
+}
+
+#container-de-descricao>ol {
+    padding: 15px 0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#container-para-comprar {
+    background-color: #e7eb90;
+}
+
+#container-para-comprar>p {
+    color: #c44f00;
+    padding: 100px 0;
+    font-size: 60px;
+}
+
+
+/**
+  *
+  *  ESTILOS COMPRAR 
+  *
+  **/
+
+div:nth-child(2),
+div:last-child {
+    text-align: center;
+}
+
+table {
+    width: 60%;
+}
+
+td button {
+    background-color: #fadf63;
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    color: black;
+}
+
+.container-do-search {
+    margin-top: 20px;
+    height: 100px;
+}
+
+
+#back-button {
+    background-color: white;
+    width: 100px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 10px;
+    color: black;
+    display: block;
+    margin: 0 auto;
+    
+}
+
+#back-button:hover {
+    background-color: #635a3d
+}
+
+.centro{
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    text-align: center;
+}
+
+table img{
+    width:40px;
+    height:40px;
+  }
+
+.search-icon {
+    width:24px;
+    height:24px;
+    position:relative;
+    top:7px;
+}
+
+button:hover{
+    background-color:darkorange;
+}
+
+button:active{
+    color:white;
+}
+
+.search-bar{
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: black;
+   
+  }
+
+.back-button2{
+    margin : 200px;
+    padding: 5px;
+
+}
+
+.bora{
+    position: relative;
+    top: 100px;
+    font-family: 'Roboto', sans-serif;
+}

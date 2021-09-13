@@ -9,28 +9,51 @@ const MainContainer = styled.div`
   align-items: center;
 `
 
+const arrayPosts =[
+  {
+    nomeUsuario: 'user1' ,
+    fotoUsuario: 'https://picsum.photos/50/50',
+    fotoPost: 'https://picsum.photos/200/160'
+
+  },
+
+  {
+    nomeUsuario: 'user2' ,
+    fotoUsuario: 'https://picsum.photos/51' ,
+    fotoPost: 'https://picsum.photos/200/170'
+  },
+
+  {
+    nomeUsuario: 'user3',
+    fotoUsuario: 'https://picsum.photos/52' ,
+    fotoPost: 'https://picsum.photos/200/180'
+  }
+]
+
 class App extends React.Component {
+  state = {
+    posts : arrayPosts
+
+  }
+
   render() {
+    const listaDePosts = this.state.posts.map ((post)=>{
+      return (
+        <Post
+          nomeUsuario = {post.nomeUsuario}
+          fotoUsuario ={post.fotoUsuario}
+          fotoPost = {post.fotoPost}
+        />
+
+      
+        );
+    });
     return (
       <MainContainer>
-        <Post
-          nomeUsuario={'user1'}
-          fotoUsuario={'https://picsum.photos/50/50'}
-          fotoPost={'https://picsum.photos/200/160'}
-        />
-        <Post
-          nomeUsuario={'user2'}
-          fotoUsuario={'https://picsum.photos/51'}
-          fotoPost={'https://picsum.photos/200/170'}
-        />
-        <Post
-          nomeUsuario={'user3'}
-          fotoUsuario={'https://picsum.photos/52'}
-          fotoPost={'https://picsum.photos/200/180'}
-        />
+        {listaDePosts}
       </MainContainer>
     );
-  }
+  };
 }
 
 export default App;

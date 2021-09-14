@@ -54,7 +54,8 @@ export default class App extends React.Component {
         <ContPrincipal>	
            
           {this.renderizaEtapa()}
-          <button onClick={this.estadoEtapa}>Próxima etapa</button>
+          {this.state.etapa < 4 ? <button onClick={this.estadoEtapa}>Próxima etapa</button> : ""}
+         
         </ContPrincipal>  
       )           
       

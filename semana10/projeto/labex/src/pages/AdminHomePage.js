@@ -1,7 +1,9 @@
+import React from "react";
+
 export default function AdminHomePage() {
     return (
         <div>
-            AdminHomePage
+            <h1>AdminHomePage</h1>
         </div>
     );
 }

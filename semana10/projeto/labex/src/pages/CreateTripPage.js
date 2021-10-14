@@ -1,7 +1,9 @@
+import React from "react";
+
 export default function CreateTripPage() {
     return (
         <div>
-            CreateTripPage
+           <h1> CreateTripPage</h1>
         </div>
     );
 }

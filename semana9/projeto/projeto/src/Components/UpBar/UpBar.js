@@ -2,14 +2,16 @@ import React, {useState, useEffect} from 'react'
 import styled from "styled-components"
 import axios from 'axios';
 
-const PerfilPagina = (props) => {
+const UpBar = () => {
 
     return (
         <div>
-            {props}
+            <button>Choose</button>
+            <p>astromatch</p>
+            <button>List all</button>
         </div>
     )
         
 }
 
-export default PerfilPagina
+export default UpBar

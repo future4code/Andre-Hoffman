@@ -2,15 +2,17 @@ import React, {useState, useEffect} from 'react'
 import styled from "styled-components"
 import axios from 'axios';
 
-const BarraBotoes = () => {
+const LowBar = () => {
 
     return (
         <div>
-            <button>X</button>
-            <button> SIM </button>
+            <button>No</button>
+            <button>Yes</button>
+
         </div>
     )
         
 }
 
-export default BarraBotoes
+export default LowBar
+

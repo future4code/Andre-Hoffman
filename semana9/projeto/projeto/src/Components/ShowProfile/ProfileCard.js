@@ -2,14 +2,17 @@ import React, {useState, useEffect} from 'react'
 import styled from "styled-components"
 import axios from 'axios';
 
-const ListaPage = () => {
+const ProfileCard = () => {
 
     return (
         <div>
-            Página com Lista de Matches
+            <img 
+            src = {'https://picsum.photos/300/200'}
+            />
         </div>
     )
         
 }
 
-export default ListaPage
+export default ProfileCard
+

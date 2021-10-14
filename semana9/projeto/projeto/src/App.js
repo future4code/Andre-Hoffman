@@ -2,16 +2,15 @@ import React, {useState} from 'react'
 import styled from "styled-components"
 import logo from './logo.svg';
 import './App.css';
-import TesteAPI from './Components/TesteAPI';
-import BarraSuperior from './Components/BarraSuperior';
-import BarraBotoes from './Components/BarraButoes';
+import ResetBar from './ResetBar/ResetBar';
+import CardComplete from './Components/CardComplete/CardComplete';
 
 function App() {
   return (
     <>
-      <BarraSuperior/>
-      <TesteAPI />
-      <BarraBotoes/>
+      <CardComplete/>
+      <ResetBar />
+      
     </>
   );
 }

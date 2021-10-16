@@ -62,6 +62,10 @@ export default function AdminHomePage() {
         history.push("/admin/trips/create");
     };
 
+    const goToTripDetails = () => {
+        history.push("/admin/trips/:id");
+      };
+
     const goBack = () => {
         history.push("/")
     };
@@ -70,6 +74,7 @@ export default function AdminHomePage() {
         <div>
             <h1>AdminHomePage</h1>
             <button onClick={goToCreateTrip}>Create new Trips</button>
+            <button onClick={goToTripDetails}>Go to trip details</button>
             <button onClick={goBack}>Go back</button>
             <div>{showTrips}</div>
                

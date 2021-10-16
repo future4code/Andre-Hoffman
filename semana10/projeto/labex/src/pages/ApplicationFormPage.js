@@ -1,8 +1,9 @@
 import React from "react";
 import useForm from "../hooks/useForm";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
 
 const Form = styled.div `
     display: flex;
@@ -22,6 +23,20 @@ const FormContainer = styled.form `
 
 export default function ApplicationFormPage() {
 
+    const [tripNames,setTripNames] = useState([]);
+
+    useEffect(()=>{
+        
+        axios.get("https://us-central1-labenu-apis.cloudfunctions.net/labeX/andre-leal-maryam/trips")
+         .then((response)=>{
+            //  console.log(response.data.trips)
+             setTripNames(response.data.trips)
+
+         }).catch((error)=>{
+             console.log(error.response)
+         })
+    }, [])
+
     const history = useHistory();
 
     const {form, onChange, cleanFields} = useForm(
@@ -29,17 +44,31 @@ export default function ApplicationFormPage() {
          age:"", 
          applicationText:"", 
          profession:"",
-         country:""})
-
+         country:"",
+         trip: {}    
+        })
+ 
+    
     const joinTrip = (event) => {
         event.preventDefault()
-        console.log("Done!", form)
+        // console.log("Done!", form)
+        const body = {
+            name:form.name,
+            age:form.age,
+            applicationText:form.applicationText,
+            profession:form.profession,
+            country:form.country 
+         }
+         axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/andre-leal-maryam/trips/${form.trip}/apply`, body)
+         .then((response)=>{
+            console.log(response.data)})
         cleanFields();
     }
 
     const goBack = () => {
         history.push("/trips/list")
       };
+
 
     return (
         <Form>
@@ -99,10 +128,27 @@ export default function ApplicationFormPage() {
                     pattern = {"[A-z]{3}"}
                     title= {"Country-code with 3 letters"}
                 />
+
+                <label for="tripNames">Choose a destination:</label>
+
+                <select 
+                name={"trip"}
+                value={form.trip}
+                onChange={onChange}>
+                {tripNames.map((trip)=>{
+                    return(
+                    <option value={trip.id}>{trip.name}</option>
+                    )
+                })}
+                   
+                </select>
+
+
                 
-                <button>Send</button>
+                <button type={'submit'}>Send</button>
                 <button onClick={goBack}>Go back</button>
             </FormContainer>
+            
         </Form>
     );
 

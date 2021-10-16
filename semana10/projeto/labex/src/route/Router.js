@@ -13,8 +13,11 @@ export const Router = () => {
   return (
     <BrowserRouter>
       <Switch>
+
         <Route exact path={"/"}>
           <HomePage />
+          {/* <ApplicationFormPage /> */}
+          {/* <CreateTripPage /> */}
         </Route>
 
         <Route exact path={"/trips/list"}>

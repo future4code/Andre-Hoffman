@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import {useState} from "react"
 import axios from "axios";
+import useForm from "../hooks/useForm";
 import { getDefaultNormalizer } from "@testing-library/react";
 
 export default function LoginPage() {
@@ -23,6 +24,10 @@ export default function LoginPage() {
         history.push("/admin/trips/:id");
       };
 
+      const goBack = () => {
+        history.push("/")
+      };
+
       const onChangeEmail = (event) =>{
         setEmail(event.target.value);
       }
@@ -42,6 +47,7 @@ export default function LoginPage() {
         .then((response)=>{
           console.log(response.data.token)
           localStorage.setItem('token', response.data.token)
+          //history.push('/')
         }).catch((error)=>{
           console.log(error.response)
         })
@@ -66,10 +72,11 @@ export default function LoginPage() {
               value={password}
               onChange={onChangePassword}
             />
-            <button onClick={onSubmitLogin}>Enviar</button>
+            <button onClick={onSubmitLogin}>Log in</button>
            <button onClick={goToAdminHomePage}>Go to Admin Home Page</button>
            <button onClick={goToCreateTrip}>Create new Trips</button>
            <button onClick={goToTripDetails}>Go to trip details</button>
+           <button onClick={goBack}>Go back</button>
         </div>
     );
 }

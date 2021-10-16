@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router";
-
+import CompleteListTrip from "../components/CompleteListTrip";
+import styled from "styled-components";
 
 const useProtectedPage = () => {
     const history = useHistory()
@@ -17,6 +18,10 @@ const useProtectedPage = () => {
 
 export default function AdminHomePage() {
 
+    const history = useHistory();
+
+    const [trips, setTrips] = useState([]);
+
     useProtectedPage()
 
     useEffect(()=>{
@@ -28,15 +33,47 @@ export default function AdminHomePage() {
             auth: token
         }})
          .then((response)=>{
-             console.log(response.data)
+            //  console.log(response.data)
          }).catch((error)=>{
              console.log(error.response)
          })
     }, [])
+
     
+      
+        useEffect(() => {
+          axios
+            .get(
+              "https://us-central1-labenu-apis.cloudfunctions.net/labeX/andre-leal-maryam/trips"
+            )
+            .then((res) => {
+              console.log(res.data.trips);
+              setTrips(res.data.trips);
+            });
+        }, []);
+    
+        const showTrips = trips.map((trip) => {
+            return(
+             <li key={trip.id}>{trip.name}</li>
+             
+             )})
+
+    const goToCreateTrip = () => {
+        history.push("/admin/trips/create");
+    };
+
+    const goBack = () => {
+        history.push("/")
+    };
+
     return (
         <div>
             <h1>AdminHomePage</h1>
+            <button onClick={goToCreateTrip}>Create new Trips</button>
+            <button onClick={goBack}>Go back</button>
+            <div>{showTrips}</div>
+               
+            
         </div>
     );
 }

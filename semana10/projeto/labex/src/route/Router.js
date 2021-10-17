@@ -16,8 +16,6 @@ export const Router = () => {
 
         <Route exact path={"/"}>
           <HomePage />
-          {/* <ApplicationFormPage /> */}
-          {/* <CreateTripPage /> */}
         </Route>
 
         <Route exact path={"/trips/list"}>

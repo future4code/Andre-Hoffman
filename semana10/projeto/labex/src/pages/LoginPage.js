@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import {useState} from "react"
 import axios from "axios";
 import useForm from "../hooks/useForm";
@@ -27,7 +27,7 @@ export default function LoginPage() {
       }
 
       const onSubmitLogin = () => {
-        console.log(email, password);
+        //console.log(email, password);
         const body = {
           email: email,
           password: password
@@ -35,12 +35,12 @@ export default function LoginPage() {
         }
         axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labeX/andre-leal-maryam/login", body)
         .then((response)=>{
-          console.log(response.data.token)
+          //console.log(response.data.token)
           localStorage.setItem('token', response.data.token)
           
           history.push('/admin/trips/list')
         }).catch((error)=>{
-          console.log(error.response)
+         // console.log(error.response)
         })
         
         

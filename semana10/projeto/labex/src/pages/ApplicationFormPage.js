@@ -33,7 +33,7 @@ export default function ApplicationFormPage() {
              setTripNames(response.data.trips)
 
          }).catch((error)=>{
-             console.log(error.response)
+             //console.log(error.response)
          })
     }, [])
 
@@ -61,7 +61,8 @@ export default function ApplicationFormPage() {
          }
          axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/andre-leal-maryam/trips/${form.trip}/apply`, body)
          .then((response)=>{
-            console.log(response.data)})
+            //console.log(response.data)
+        })
         cleanFields();
     }
 

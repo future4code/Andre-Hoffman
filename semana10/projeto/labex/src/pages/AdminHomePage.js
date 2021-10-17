@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import CompleteListTrip from "../components/CompleteListTrip";
 import styled from "styled-components";
+
 
 const useProtectedPage = () => {
     const history = useHistory()
@@ -35,7 +37,7 @@ export default function AdminHomePage() {
          .then((response)=>{
             //  console.log(response.data)
          }).catch((error)=>{
-             console.log(error.response)
+             //console.log(error.response)
          })
     }, [])
 
@@ -47,14 +49,16 @@ export default function AdminHomePage() {
               "https://us-central1-labenu-apis.cloudfunctions.net/labeX/andre-leal-maryam/trips"
             )
             .then((res) => {
-              console.log(res.data.trips);
+              //console.log(res.data.trips);
               setTrips(res.data.trips);
             });
         }, []);
     
         const showTrips = trips.map((trip) => {
             return(
-             <li key={trip.id}>{trip.name}</li>
+                <div key={trip.id}>
+                 <Link to={`/admin/trips/${trip.id}`}>{trip.name}</Link>
+                 </div>
              
              )})
 

@@ -25,7 +25,7 @@ const useProtectedPage = () => {
     useEffect(()=>{
         const token = localStorage.getItem("token");
         if(token === null) {
-            console.log("Not Logged")
+            //console.log("Not Logged")
             history.push('/login')
         }
     }, [])
@@ -42,7 +42,19 @@ export default function CreateTripPage() {
 
     const createTrip = (event) => {
         event.preventDefault()
-        console.log("Done!", form)
+        axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/andre-leal-maryam/trips`, form, {
+            headers: {
+                auth: window.localStorage.getItem('token'),
+            }})
+            .then((res) => {
+                //console.log(res.data)
+                alert("Trip successfully created!")
+                cleanFields()
+            })
+            .catch((err) => {
+                //console.log(err.messagem)
+                alert("Pleasy try again")
+            });
         cleanFields();
     }
     
@@ -57,11 +69,13 @@ export default function CreateTripPage() {
             auth: token
         }})
          .then((response)=>{
-             console.log(response.data)
+            // console.log(response.data)
          }).catch((error)=>{
-             console.log(error.response)
+             //console.log(error.response)
          })
     }, [])
+
+    
 
     return (
         <div>

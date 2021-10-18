@@ -25,7 +25,7 @@ const useProtectedPage = () => {
 
 export default function TripDetailsPage() {
 
-    const [tripDetail,setTrip]=useState()
+    const [tripDetail,setTrip]=useState([])
 
     const params = useParams()
 
@@ -39,9 +39,9 @@ export default function TripDetailsPage() {
             auth: localStorage.getItem('token')
         }})
          .then((response)=>{
-             //console.log(response.data)
+             console.log(response.data)
          }).catch((error)=>{
-             //console.log(error.response)
+             console.log(error.response)
          })
     }, [])
 
@@ -59,7 +59,7 @@ export default function TripDetailsPage() {
             
             
         })
-    }, [])
+    }, [tripDetail])
 
     
     const processRequest = (candidateId, approve) =>{

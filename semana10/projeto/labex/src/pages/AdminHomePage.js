@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useHistory } from "react-router";
+import { useHistory, useParams } from "react-router";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import CompleteListTrip from "../components/CompleteListTrip";
 import styled from "styled-components";
@@ -20,11 +20,29 @@ const useProtectedPage = () => {
 
 export default function AdminHomePage() {
 
+    const params = useParams()
+
     const history = useHistory();
 
     const [trips, setTrips] = useState([]);
 
     useProtectedPage()
+
+    const removeTrip = (id) => {
+
+        axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/andre-leal-maryam/trips/${id}`, {
+            headers: {
+                auth: localStorage.getItem('token')
+            }
+        })
+            .then((response) => {
+                alert('Trip deleted')
+                history.push("/admin/trips/list")
+            })
+            .catch((error) => {
+                alert('Something went wrong. Pleasy try again')
+            })
+    }
 
     useEffect(()=>{
         const token = localStorage.getItem(
@@ -52,12 +70,13 @@ export default function AdminHomePage() {
               //console.log(res.data.trips);
               setTrips(res.data.trips);
             });
-        }, []);
+        }, [trips]);
     
         const showTrips = trips.map((trip) => {
             return(
                 <div key={trip.id}>
                  <Link to={`/admin/trips/${trip.id}`}>{trip.name}</Link>
+                 <button onClick={()=>removeTrip(trip.id)}>Delete</button>
                  </div>
              
              )})
@@ -65,10 +84,6 @@ export default function AdminHomePage() {
     const goToCreateTrip = () => {
         history.push("/admin/trips/create");
     };
-
-    const goToTripDetails = () => {
-        history.push("/admin/trips/:id");
-      };
 
     const goBack = () => {
         history.push("/")
@@ -78,7 +93,6 @@ export default function AdminHomePage() {
         <div>
             <h1>AdminHomePage</h1>
             <button onClick={goToCreateTrip}>Create new Trips</button>
-            <button onClick={goToTripDetails}>Go to trip details</button>
             <button onClick={goBack}>Go back</button>
             <div>{showTrips}</div>
                

@@ -33,6 +33,8 @@ const useProtectedPage = () => {
 
 export default function CreateTripPage() {
 
+    const history = useHistory()
+
     const {form, onChange, cleanFields} = useForm(
         {name:"",
          planet:"", 
@@ -74,6 +76,10 @@ export default function CreateTripPage() {
              //console.log(error.response)
          })
     }, [])
+
+    const goBack = () => {
+        history.push("/admin/trips/list")
+    };
 
     
 
@@ -136,6 +142,7 @@ export default function CreateTripPage() {
                 />
                 
                 <button>Create</button>
+                <button onClick={goBack} >Go Back to Admin Home</button>
             </FormContainer>
         </div>
     );

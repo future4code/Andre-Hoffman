@@ -4,7 +4,48 @@ import { useHistory, useParams } from "react-router";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import CompleteListTrip from "../components/CompleteListTrip";
 import styled from "styled-components";
+import horizon from "../img/horizon.jpg";
 
+const Main = styled.div `
+
+  display:flex;
+  flex-direction: column;
+
+  align-items: center;
+  background-image: url(${horizon});
+  height: 100vh;
+ 
+
+`
+const Title = styled.h1 `
+  font-family: Georgia, sans-serif;
+  font-size: 3em;
+  color: white;
+  letter-spacing: -2px;
+
+`
+
+const StyledButtons = styled.button `
+  border-radius: 40px;
+  letter-spacing:2px;
+  padding: 12px 36px;
+  margin: 10px 0;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 1em;
+  :hover {
+    background-color: gray;
+  }
+
+`
+const TripInside = styled.div `
+  display:flex;
+  flex-direction:row;
+  justify-content: space-between;
+  background-color: white;
+  margin-bottom:3px;
+
+`
 
 const useProtectedPage = () => {
     const history = useHistory()
@@ -74,10 +115,10 @@ export default function AdminHomePage() {
     
         const showTrips = trips.map((trip) => {
             return(
-                <div key={trip.id}>
+                <TripInside key={trip.id}>
                  <Link to={`/admin/trips/${trip.id}`}>{trip.name}</Link>
                  <button onClick={()=>removeTrip(trip.id)}>Delete</button>
-                 </div>
+                 </TripInside>
              
              )})
 
@@ -90,13 +131,13 @@ export default function AdminHomePage() {
     };
 
     return (
-        <div>
-            <h1>AdminHomePage</h1>
-            <button onClick={goToCreateTrip}>Create new Trips</button>
-            <button onClick={goBack}>Go back</button>
+        <Main>
+            <Title>AdminHomePage</Title>
+            <StyledButtons onClick={goToCreateTrip}>Create new Trips</StyledButtons>
             <div>{showTrips}</div>
+            <button onClick={goBack}>Go back</button>
                
             
-        </div>
+        </Main>
     );
 }

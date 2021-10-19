@@ -4,6 +4,17 @@ import axios from "axios";
 import { useHistory } from "react-router";
 import styled from "styled-components";
 
+const Main = styled.div `
+
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+ 
+
+`
+
 const Form = styled.div `
     display: flex;
     margin:10px;
@@ -84,8 +95,9 @@ export default function CreateTripPage() {
     
 
     return (
-        <div>
-           <h1> CreateTripPage</h1>
+        <Main>
+           <h1> Create Trip Page</h1>
+    
            <FormContainer onSubmit={createTrip}>
                 
                 <input
@@ -142,8 +154,9 @@ export default function CreateTripPage() {
                 />
                 
                 <button>Create</button>
+                <hr/>
                 <button onClick={goBack} >Go Back to Admin Home</button>
             </FormContainer>
-        </div>
+        </Main>
     );
 }

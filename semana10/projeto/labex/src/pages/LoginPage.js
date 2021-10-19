@@ -1,9 +1,64 @@
 import React, { useEffect } from "react";
+import styled from "styled-components";
 import { useHistory, Link } from "react-router-dom";
 import {useState} from "react"
 import axios from "axios";
 import useForm from "../hooks/useForm";
 import { getDefaultNormalizer } from "@testing-library/react";
+import horizon from "../img/horizon.jpg";
+
+const Title = styled.h1 `
+  font-family: Georgia, sans-serif;
+  font-size: 5em;
+  color: white;
+  letter-spacing: -2px;
+
+`
+
+const Main = styled.div `
+
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(${horizon});
+  height: 100vh;
+ 
+
+`
+
+const MainButtons = styled.div `
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  
+  
+`
+
+const StyledButtons = styled.button `
+  border-radius: 40px;
+  letter-spacing:2px;
+  padding: 12px 36px;
+  margin: 10px 0;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 1em;
+  :hover {
+    background-color: gray;
+  }
+
+`
+
+const StyledInput = styled.input`
+
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+
+
+`
 
 
 export default function LoginPage() {
@@ -49,22 +104,22 @@ export default function LoginPage() {
 
 
     return (
-        <div>
-            <h1>Admin Area</h1>
-            <input
+        <Main>
+            <Title>Admin Area</Title>
+            <StyledInput
               placeholder = "email"
               type="email"
               value={email}
               onChange={onChangeEmail}
             />
-            <input
+            <StyledInput
               placeholder = "password"
               type="password"
               value={password}
               onChange={onChangePassword}
             />
-            <button onClick={onSubmitLogin}>Log in</button>
-           <button onClick={goBack}>Go back</button>
-        </div>
+            <StyledButtons onClick={onSubmitLogin}>Log in</StyledButtons>
+            <StyledButtons onClick={goBack}>Go back</StyledButtons>
+        </Main>
     );
 }

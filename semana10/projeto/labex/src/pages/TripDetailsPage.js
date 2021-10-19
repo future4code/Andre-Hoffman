@@ -29,7 +29,14 @@ export default function TripDetailsPage() {
 
     const params = useParams()
 
+    const history = useHistory();
+
+
     useProtectedPage()
+
+    const goBack = () => {
+        history.push("/admin/trips/list")
+      };
 
     useEffect(()=>{
 
@@ -102,7 +109,7 @@ export default function TripDetailsPage() {
                     <p><strong>Duration:</strong> {tripDetail.durationInDays}</p>
                     <p><strong>Date: </strong> {tripDetail.date}</p>
                 </CardTrip>
-            <button>Go back</button>
+            <button onClick={goBack}>Go back</button>
         
 
              <h3>Waiting for Approval Candidates:</h3>

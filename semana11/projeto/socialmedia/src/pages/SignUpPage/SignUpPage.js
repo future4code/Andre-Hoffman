@@ -1,10 +1,19 @@
 import React from "react"
+import useUnprotectedPage from "../../hooks/useUnprotectedPage"
+import { ScreenContainer } from "../LoginPage/styled"
+import SignUpForm from "./SignUpForm"
 
 const SignUpPage = () => {
+
+    useUnprotectedPage()
+
+    
+
     return(
-        <div>
+        <ScreenContainer>
             <h1>SignUpPage</h1>
-        </div>
+            <SignUpForm />
+        </ScreenContainer>
     )
 }
 

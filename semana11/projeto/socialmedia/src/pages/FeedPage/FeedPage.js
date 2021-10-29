@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import useProtectedPage from "../../hooks/useProtectedPage";
 
 const Card = styled.div`
     border: 1px solid red; 
@@ -8,6 +9,8 @@ const Card = styled.div`
 `
 
 const FeedPage = () => {
+
+    useProtectedPage()
 
     const posts = [
         {

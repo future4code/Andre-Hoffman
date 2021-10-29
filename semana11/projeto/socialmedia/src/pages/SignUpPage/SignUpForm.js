@@ -9,25 +9,26 @@ import { goToFeedPage } from "../../routes/coordinator";
 
 
 
-const SignUpForm = () => {
+const SignUpForm = ({rightButton, setRightButton}) => {
 
     const history = useHistory()
 
     const [form,onChange,clear] = useForm({username: "", email:"",password: ""})
 
-    const onSubmitForm = (event) => {
+    const onSubmitForm = (event ) => {
         
         event.preventDefault()
         signUp()
 
     }
 
-    const signUp = () =>{
+    const signUp = (setRightButton) =>{
         axios.post(`${BASE_URL}/users/signup`, form)
         .then((res)=>{
             localStorage.setItem("token", res.data.token)
             clear()
             goToFeedPage(history)
+            setRightButton("Logout")
 
         })
         .catch((err)=>alert(err.response.data.message))

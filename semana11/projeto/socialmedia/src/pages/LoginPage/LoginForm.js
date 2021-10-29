@@ -7,7 +7,7 @@ import { BASE_URL } from "../../constants/url";
 import { goToFeedPage } from "../../routes/coordinator";
 import { useHistory } from "react-router";
 
-const LoginForm = () => {
+const LoginForm = ({rightButton, setRightButton}) => {
 
     const [form,onChange,clear] = useForm({email:"",password: ""})
 
@@ -20,15 +20,16 @@ const LoginForm = () => {
         
     }
 
-    const login = () =>{
+    const login = (setRightButton) =>{
         axios.post(`${BASE_URL}/users/login`, form)
         .then((res)=>{
             localStorage.setItem("token", res.data.token)
             clear()
             goToFeedPage(history)
+            setRightButton("Logout")
 
         })
-        .catch((err)=>alert(err.response.data.message))
+        .catch((err)=>alert(err.response))
     }
 
     return(

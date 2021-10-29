@@ -4,24 +4,24 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import FeedPage from "../pages/FeedPage/FeedPage";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import SignUpPage from "../pages/SignUpPage/SignUpPage";
-import PostPage from "../pages/PostPage/PostPage";
+import PostDetailsPage from "../pages/PostDetailsPage/PostDetailsPage";
 
 
 
-const Router = () => {
+const Router = ({rightButton, setRightButton}) => {
     return(
         
             
             <Switch>
                 <Route exact path = "/">
                     
-                        <LoginPage/>
+                        <LoginPage rightButton={rightButton} setRightButton={setRightButton}/>
                     
                 </Route>
 
                 <Route exact path = "/signup">
                     
-                        <SignUpPage />
+                        <SignUpPage rightButton={rightButton} setRightButton={setRightButton} />
                    
                 </Route>
 
@@ -31,9 +31,9 @@ const Router = () => {
                    
                 </Route>
 
-                <Route exact path = "/post/:id">
+                <Route exact path = "/post/:id/comments">
                     
-                        <PostPage />
+                        <PostDetailsPage />
                    
                 </Route>
 

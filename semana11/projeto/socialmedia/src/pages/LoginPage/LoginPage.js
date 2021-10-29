@@ -7,7 +7,7 @@ import {goToSignUpPage} from "../../routes/coordinator";
 import useUnprotectedPage from "../../hooks/useUnprotectedPage";
 
 
-const LoginPage = () => {
+const LoginPage = ({rightButton, setRightButton}) => {
     
     useUnprotectedPage()
     const history = useHistory()
@@ -17,7 +17,7 @@ const LoginPage = () => {
     return(
         <ScreenContainer>
             <h1>LoginPage</h1>
-            <LoginForm />
+            <LoginForm rightButton={rightButton} setRightButton={setRightButton}/>
             <SignUpButtonContainer>
                 <Button
                 onClick = {()=>{goToSignUpPage(history)}}

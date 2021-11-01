@@ -1,5 +1,6 @@
+import { TextField } from "@material-ui/core";
 import axios from "axios";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import PostCard from "../../components/Header/PostCard";
 import { BASE_URL } from "../../constants/url";
@@ -18,22 +19,59 @@ const FeedCards = styled.div`
 const FeedPage = () => {
 
     useProtectedPage()
+    const [title, setTitle] = useState("")
+    const [text, setText] = useState("")
+   
+    
 
   
     const posts = useRequestData([], `${BASE_URL}/posts`)
-    console.log("ESSE POST AQUI PRIMEIRA PROP", posts)
 
-    
+   
 
-    
 
-    
+    const handleCreateNewPost = () => {
 
-    
+        const auth = {
+            headers: {
+                Authorization: localStorage.getItem("token")
+            }
+        }
+
+        const body = {
+            title: title,
+            body: text
+        }
+
+        axios.post(`${BASE_URL}/posts`, body, auth)
+        .then((res)=>{
+            setText("")
+            setTitle("")
+            alert("Post created successfully")
+        })
+        .catch((error)=>{
+            
+            alert("There was a problem creating the post. Pleasy try again")
+           })
+
+    }
 
     return(
         <FeedCards>
-            <h1>FeedPage</h1>
+            <TextField
+                placeholder={"Post title"}
+                value={title}   
+                onChange={(event)=>{setTitle(event.target.value)}}            
+
+            />
+            <TextField
+                placeholder={"Post text"}
+                value={text}
+                onChange={(event)=>{setText(event.target.value)}}  
+            />  
+            <button
+                onClick={handleCreateNewPost}
+            >Create New Post</button>
            
             {posts.map((post)=>{
                return(

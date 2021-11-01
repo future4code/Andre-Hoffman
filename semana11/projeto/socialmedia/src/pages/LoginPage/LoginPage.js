@@ -16,7 +16,7 @@ const LoginPage = ({rightButton, setRightButton}) => {
 
     return(
         <ScreenContainer>
-            <h1>LoginPage</h1>
+            <h1>Sign in to Labeddit</h1>
             <LoginForm rightButton={rightButton} setRightButton={setRightButton}/>
             <SignUpButtonContainer>
                 <Button

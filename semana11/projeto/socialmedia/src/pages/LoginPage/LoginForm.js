@@ -14,7 +14,7 @@ const LoginForm = ({rightButton, setRightButton}) => {
     const history = useHistory()
 
     const onSubmitForm = (event) => {
-        console.log(form)
+        
         event.preventDefault()
         login()
         
@@ -29,7 +29,7 @@ const LoginForm = ({rightButton, setRightButton}) => {
             setRightButton("Logout")
 
         })
-        .catch((err)=>alert(err.response))
+        .catch((err)=>console.log(err.response))
     }
 
     return(

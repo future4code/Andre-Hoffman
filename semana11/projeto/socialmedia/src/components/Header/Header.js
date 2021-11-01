@@ -13,9 +13,6 @@ const Header = ({rightButton, setRightButton}) => {
     localStorage.removeItem("token")
   }
 
-  // const [rightButton, setRightButton] = useState(
-  //   token ? "Logout" : "Login"
-  // )
 
   const rightButtonAction = () => {
     if(token){
@@ -28,10 +25,15 @@ const Header = ({rightButton, setRightButton}) => {
 
   }
 
+  const leftButtonAction = () => {
+      goToLoginPage(history)
+
+  }
+
   return (
     <AppBar position = "static">
       <StyledToolbar>
-        <Button onClick={()=> goToLoginPage(history)}color="inherit">LabEddit</Button>
+        <Button onClick={leftButtonAction}color="inherit">LabEddit</Button>
         <Button onClick={rightButtonAction}color="inherit">{rightButton}</Button>
       </StyledToolbar>
     </AppBar>

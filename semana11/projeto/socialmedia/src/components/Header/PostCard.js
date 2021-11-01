@@ -16,7 +16,7 @@ const PostCard = (props) => {
     const history = useHistory()
 
     const handleGoToPostDetail = () => {
-        console.log("Enteredhandle", props.post)
+       
         history.push(`/post/${props.post.id}/comments`)
     }
 

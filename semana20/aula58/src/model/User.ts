@@ -12,3 +12,8 @@ export interface user {
     role: USER_ROLES
            
 }
+
+export type login = {
+    email:string,
+    password:string
+ } 

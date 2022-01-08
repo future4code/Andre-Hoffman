@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { GetBusiness } from "../business/GetBusiness";
 import { LoginBusiness } from "../business/LoginBusiness";
 import { SignUpBusiness } from "../business/SignUpBusiness";
 
@@ -50,6 +51,23 @@ export class SignUpController {
         }catch(error){
             res.status(500).send("something went wrong")
         }
+    }
+
+    get = async (
+        req: Request,
+        res: Response
+    )=>{
+        try{
+        
+           
+            const token = req.headers.authorization!;
+
+            const users = await new GetBusiness().get(token);
+            
+            res.status(200).send(users);
+
+        }catch(error){
+            res.send({ message: error.message }).status(error.status);        }
     }
 
     

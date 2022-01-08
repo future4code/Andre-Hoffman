@@ -10,5 +10,5 @@ app.post('/signup', new SignUpController().signUp)
 
 app.post("/login", new SignUpController().login)
 
-
+app.get("/all", new SignUpController().get)
 

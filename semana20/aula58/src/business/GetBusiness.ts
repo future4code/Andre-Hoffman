@@ -21,6 +21,11 @@ export class GetBusiness{
         try{
 
             const validation = await new Authenticator().getTokenData(token);
+
+            if (!validation) {
+                throw new Error("Token problems")
+            }
+
             const getAll : user = await new GetDatabase().get();
 
             return getAll;

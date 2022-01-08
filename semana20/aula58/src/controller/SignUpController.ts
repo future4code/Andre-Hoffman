@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { DeleteBusiness } from "../business/DeleteBusiness";
 import { GetBusiness } from "../business/GetBusiness";
 import { LoginBusiness } from "../business/LoginBusiness";
 import { SignUpBusiness } from "../business/SignUpBusiness";
@@ -68,6 +69,26 @@ export class SignUpController {
 
         }catch(error){
             res.send({ message: error.message }).status(error.status);        }
+    }
+
+    delete = async (
+        req: Request, res: Response
+    )=> {
+        try {
+
+            const input = {
+                id: req.params.id,
+				token: req.headers.authorization!
+            }
+
+           const deleteUser = await new DeleteBusiness().deleteUser(input);
+
+            res.status(200).send({ message: "Usuário apagado com sucesso" });
+
+        } catch (error) {
+            res.status(400).send({ error: error.message });
+        }
+
     }
 
     

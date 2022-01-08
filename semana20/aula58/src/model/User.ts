@@ -1,6 +1,6 @@
 export enum USER_ROLES{
     NORMAL = "NORMAL",
-    EVENT = "EVENT"
+    ADMIN = "ADMIN"
 }
 
 

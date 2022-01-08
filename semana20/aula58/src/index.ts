@@ -13,4 +13,6 @@ app.post("/login", new SignUpController().login)
 
 app.get("/all", new SignUpController().get)
 
+app.delete("/:id", new SignUpController().delete)
+
 

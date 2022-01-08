@@ -21,11 +21,12 @@ export class LoginBusiness{
             }
 
             
-            const userFromDB = await new LoginDatabase().login(login);
+            const userFromDB : user = await new LoginDatabase().login(login.email);
 
-            const hashCompare = await new HashManager().compareHash(login.password, userFromDB.getPassword());
+            
+            const hashCompare = await new HashManager().compareHash(login.password, userFromDB.password);
 
-            const accessToken = new Authenticator().generateToken({ id: userFromDB.getId(), role: userFromDB.role});
+            const accessToken = new Authenticator().generateToken({ id: userFromDB.id, role:userFromDB.role});
 
             if (!hashCompare) {
                 throw new Error("Invalid Password!");
